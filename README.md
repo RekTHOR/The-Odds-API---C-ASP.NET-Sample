@@ -17,7 +17,7 @@ A simple web application demonstrating how to use [The Odds API](https://the-odd
 
 ## Requirements
 
-- .NET 8.0 SDK (included in Replit)
+- .NET 8.0 SDK
 
 ## Running locally
 
