@@ -10,7 +10,7 @@ app.MapGet("/", async () =>
     using var client = new HttpClient();
     client.BaseAddress = new Uri("https://api.the-odds-api.com/v4/");
 
-    var html = "<html><head><title>The Odds API - C# Sample</title>";
+    var html = "<html><head><meta charset=\"UTF-8\"><title>The Odds API - C# Sample</title>";
     html += "<style>body{font-family:Arial,sans-serif;max-width:800px;margin:40px auto;padding:20px;}";
     html += "h1{color:#333;}h2{color:#666;border-bottom:2px solid #eee;padding-bottom:10px;}";
     html += ".sport,.match{background:#f9f9f9;padding:15px;margin:10px 0;border-radius:5px;}";
@@ -65,7 +65,7 @@ app.MapGet("/", async () =>
     }
 
     html += "</body></html>";
-    return Results.Content(html, "text/html");
+    return Results.Content(html, "text/html; charset=utf-8");
 });
 
 app.Run();
@@ -102,4 +102,5 @@ record Market(
 record Outcome(
     [property: JsonPropertyName("name")] string Name,
     [property: JsonPropertyName("price")] decimal Price
+
 );
